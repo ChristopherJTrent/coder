@@ -20,7 +20,6 @@ import (
 type MockPubsub struct {
 	ctrl     *gomock.Controller
 	recorder *MockPubsubMockRecorder
-	isgomock struct{}
 }
 
 // MockPubsubMockRecorder is the mock recorder for MockPubsub.
@@ -55,45 +54,45 @@ func (mr *MockPubsubMockRecorder) Close() *gomock.Call {
 }
 
 // Publish mocks base method.
-func (m *MockPubsub) Publish(event string, message []byte) error {
+func (m *MockPubsub) Publish(arg0 string, arg1 []byte) error {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Publish", event, message)
+	ret := m.ctrl.Call(m, "Publish", arg0, arg1)
 	ret0, _ := ret[0].(error)
 	return ret0
 }
 
 // Publish indicates an expected call of Publish.
-func (mr *MockPubsubMockRecorder) Publish(event, message any) *gomock.Call {
+func (mr *MockPubsubMockRecorder) Publish(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Publish", reflect.TypeOf((*MockPubsub)(nil).Publish), event, message)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Publish", reflect.TypeOf((*MockPubsub)(nil).Publish), arg0, arg1)
 }
 
 // Subscribe mocks base method.
-func (m *MockPubsub) Subscribe(event string, listener pubsub.Listener) (func(), error) {
+func (m *MockPubsub) Subscribe(arg0 string, arg1 pubsub.Listener) (func(), error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Subscribe", event, listener)
+	ret := m.ctrl.Call(m, "Subscribe", arg0, arg1)
 	ret0, _ := ret[0].(func())
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
 // Subscribe indicates an expected call of Subscribe.
-func (mr *MockPubsubMockRecorder) Subscribe(event, listener any) *gomock.Call {
+func (mr *MockPubsubMockRecorder) Subscribe(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Subscribe", reflect.TypeOf((*MockPubsub)(nil).Subscribe), event, listener)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Subscribe", reflect.TypeOf((*MockPubsub)(nil).Subscribe), arg0, arg1)
 }
 
 // SubscribeWithErr mocks base method.
-func (m *MockPubsub) SubscribeWithErr(event string, listener pubsub.ListenerWithErr) (func(), error) {
+func (m *MockPubsub) SubscribeWithErr(arg0 string, arg1 pubsub.ListenerWithErr) (func(), error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SubscribeWithErr", event, listener)
+	ret := m.ctrl.Call(m, "SubscribeWithErr", arg0, arg1)
 	ret0, _ := ret[0].(func())
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
 // SubscribeWithErr indicates an expected call of SubscribeWithErr.
-func (mr *MockPubsubMockRecorder) SubscribeWithErr(event, listener any) *gomock.Call {
+func (mr *MockPubsubMockRecorder) SubscribeWithErr(arg0, arg1 any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SubscribeWithErr", reflect.TypeOf((*MockPubsub)(nil).SubscribeWithErr), event, listener)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SubscribeWithErr", reflect.TypeOf((*MockPubsub)(nil).SubscribeWithErr), arg0, arg1)
 }
